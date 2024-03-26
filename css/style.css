@@ -1,12 +1,5 @@
-/*body { background-color: black;}*/
 body { 
-    background-color: black;
-    color: green;
+    
+    color: blue;
 }
 
-select{
-    /*overflow:auto;*/
-    color: green;
-    font-size: larger;
-    background-color: black;
-}
