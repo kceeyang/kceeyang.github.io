@@ -1,12 +1,14 @@
 /*body { background-color: black;}*/
 body { 
     background-color: black;
-    color: green;
+    color: #66FF00;
+    text-align: center;
 }
 
 select{
     /*overflow:auto;*/
-    color: green;
+    color: #66FF00;
     font-size: larger;
     background-color: black;
+   /*text-align: center;*/
 }
