@@ -3,6 +3,11 @@ body {
     background-color: black;
     color: #66FF00;
     text-align: center;
+    
+    /*font-family: "Courier New",Courier, monospace;
+    margin: 0;
+    padding: 20px; */
+
 }
 
 select{

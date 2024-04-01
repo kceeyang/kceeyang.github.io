@@ -1,5 +1,14 @@
 body { 
     
     color: blue;
+    
+}
+
+h1 {
+    color: #880000;
+  }
+  
+p.paragraph{
+    color:green;
 }
 
