@@ -10,9 +10,9 @@
     
 
     <h1>Hello World!</h1>
-    <h2>Select one of the following programming languages:</h2>
+    <h2>Select one of the following programming languages to go to the corresponding wiki page:</h2>
     
-    <select size="9">
+    <select size="9", onchange="location = this.value;">
         <option value="https://en.wikipedia.org/wiki/JavaScript">1&emsp;JavaScript</option>
         <option value="https://en.wikipedia.org/wiki/Python_(programming_language)">2&emsp;Python</option>
         <option value="https://en.wikipedia.org/wiki/Java_(programming_language)">3&emsp;Java</option>
@@ -24,9 +24,69 @@
         <option value="https://en.wikipedia.org/wiki/Scala_(programming_language)">9&emsp;Scala</option>
     </select>
 
-
+    <p class="paragraph" id="second">Below is an example of a table (display link only): </p>
     
+    <table class="center">
+        <tr>
+          <th>Programming languages</th>
+          <th>Wiki Links</th> 
+        </tr>
+        <tr>
+          <td>JavaScript</td>
+          <td>https://en.wikipedia.org/wiki/JavaScript</td> 
+        </tr>
+        <tr>
+          <td>Python</td>
+          <td>https://en.wikipedia.org/wiki/Python_(programming_language)</td> 
+        </tr>
+        <tr>
+            <td>Java</td>
+            <td>https://en.wikipedia.org/wiki/Java_(programming_language)</td> 
+        </tr>
+        <tr>
+            <td>C++</td>
+            <td>https://en.wikipedia.org/wiki/C%2B%2B</td> 
+        </tr>
+        <tr>
+            <td>C</td>
+            <td>https://en.wikipedia.org/wiki/C_(programming_language)</td> 
+        </tr>
+        <tr>
+            <td>C#</td>
+            <td>https://en.wikipedia.org/wiki/C_Sharp_(programming_language)</td> 
+        </tr>
+        <tr>
+            <td>R</td>
+            <td>https://en.wikipedia.org/wiki/R_(programming_language)</td> 
+        </tr>
+        <tr>
+            <td>MATLAB</td>
+            <td>https://en.wikipedia.org/wiki/MATLAB</td> 
+        </tr>
+        <tr>
+            <td>Scala</td>
+            <td>https://en.wikipedia.org/wiki/Scala_(programming_language)</td> 
+        </tr>
+      </table>
 
-   
+
+    <p class="paragraph" id="third">Below is an example of a list: </p>
+    <dl>
+        <dt>JavaScript</dt>
+        <dt>Python</dt>
+        <dt>Java</dt>
+        <dt>C++</dt>
+        <dt>C</dt>
+        <dt>C#</dt>
+        <dt>R</dt>
+        <dt>MATLAB</dt>
+        <dt>Scala</dt>
+    </dl>
+
+
 </body>
 </html>
+
+
+
+
