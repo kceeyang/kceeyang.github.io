@@ -1,0 +1,108 @@
+$uchicago-maroon:#800000;
+$uchicago-dark-grey:#767676;
+$uchicago-light-grey:#D6D6CE;
+$white:#FFFFFF;
+$black:#000000;
+$font-stack: Helvetica, sans-serif;
+$std-margin-left: 15px;
+
+
+h1{
+    margin-left: $std-margin-left;
+}
+
+body{
+    background-color: $white;
+    color: $uchicago-maroon
+}
+
+
+p {
+    margin-left: $std-margin-left;
+    color: $black;
+}
+
+@mixin flex-container{
+    display: flex;
+    align-items: center;
+    padding: 1.2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+.navbar{
+    @include flex-container;
+
+    ul{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            margin-right: 1.2rem;
+            a{
+                text-decoration: none;
+                color: $uchicago-light-grey;
+                font-family: $font-stack;
+                &:hover{
+                    color: $uchicago-dark-grey;
+                }
+                &.active, &.bold{
+                    color: $white;
+                    font-weight: bold;
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}
+
+.container-fluid{
+    background-color: $uchicago-maroon;
+}
+
+
+
+.text{
+    flex-direction:column;
+    display: flex;
+    color:$black;
+    font-family: $font-stack;
+    text-decoration: none;
+    min-height: 10vh;
+    margin: 0;
+}
+
+
+footer{
+    p.maroon
+    {
+        @include flex-container;
+        background-color: $uchicago-maroon;
+        color:$uchicago-light-grey
+    }
+    p.darkGray
+    {
+        @include flex-container;
+        background-color: $uchicago-dark-grey;
+        color:$white
+    }
+    p.lightGray
+    {
+        @include flex-container;
+        background-color: $uchicago-light-grey;
+        color:$black
+    }
+      
+}
+
+
+
+
+
+
+
+
+
