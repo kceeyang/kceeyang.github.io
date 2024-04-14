@@ -12,7 +12,7 @@ function greeting(){
     }
     else if (hour >=12 && hour < 16)
     {
-        greeting = "Good afternoon";
+        greeting = "Good day";
     }
     else
     {
