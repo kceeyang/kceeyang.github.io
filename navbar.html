@@ -1,0 +1,70 @@
+<nav class="navbar navbar-expand-lg navbar-dark container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mr-auto">
+            
+            
+            <a class="navbar-brand" href="index.html">Home</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            
+            <!-- 
+            <li class="nav-item">
+                <a class="nav-link" homeid="a1" href="index.html">Home</a>
+            </li>
+            -->
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown_01" role="button" data-bs-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Digital Chalkboard
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/DigitalChalkboard/w3/chalkboardw3.html">Week 03</a>
+                    <a class="dropdown-item" href="/DigitalChalkboard/w4/chalkboardw4.html">Week 04</a>
+                </div>
+            </li>
+
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown_02" role="button" data-bs-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Technical
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/TechnicalPresentation/w2/HelloWorld.html">Week 02</a>
+                <a class="dropdown-item" href="/TechnicalPresentation/w3/technicalw3.html">Week 03</a>
+            </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link" href="/DigitalChalkboard/w3/about.html">About</a>
+            </li>
+        
+            <li class="nav-item">
+                <a class="nav-link" href="/DigitalChalkboard/w3/contact.html">Contact</a>
+            </li>
+
+        </ul>
+    </div>
+    
+    <script>
+        var pathname = window.location.pathname;
+        var cleanPath = pathname.substring(pathname.lastIndexOf('/') + 1);
+        
+       //var id = $('a.nav-link').attr('homeid');
+        //if (id) {
+        //    alert("Howdy " + id + "!");
+       // } else {
+       // }
+
+        $('[href*="' + cleanPath + '"]').addClass('active');
+        
+        
+    </script>
+</nav>
