@@ -4,8 +4,12 @@ h1 {
   }
   
 p{
+    font-size: larger;
+    font-weight: bold;
+    line-height:40px;
     padding: 20px;
 }
+
 
 nav {
     background-color: #800000;
@@ -20,4 +24,8 @@ nav {
 .col-sm{
     background-color: #CDCDCD;
     padding: 20px;
+}
+
+.btn-group{
+    align-items: flex-start;
 }

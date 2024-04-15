@@ -1,13 +1,13 @@
-body { 
-    
-    color: blue;
-    
-}
-
 h1 {
     color: #880000;
+    padding: 20px;
   }
   
+p{
+    color: blue;
+    padding: 20px;
+}
+
 p.paragraph{
     color:green;
 }
