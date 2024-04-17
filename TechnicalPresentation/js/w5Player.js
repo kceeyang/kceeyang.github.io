@@ -1,10 +1,24 @@
 document.getElementById("button1").addEventListener("click", playSound);
 
-var sound2 = new Howl({src:['../audio/Cruel_Summer.mp3'], onend: function() {console.log('Finished!');}});
+var sound2 = new Howl(
+  {src:['../audio/Cruel_Summer.mp3'], 
+  onend: function() 
+  {console.log('Finished!');}}
+);
 
-function playSound(){
+
+function playSound()
+{
     sound2.play();
 }
+
+
+document.getElementById("button2").addEventListener("click", togglePlay);
+
+function togglePlay()
+{
+    return sound2.playing() ? sound2.pause() : sound2.play();
+};
 
 
 

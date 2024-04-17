@@ -9,10 +9,17 @@
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
 
-        <!-- Howler.js CDN -->
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.js"></script>
+        <!-- Howler.js CDN
 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/1.1.29/howler.min.js" integrity="sha512-lTr2M0nvT0ozUaPu3nGmsD/XlvaXvqovuw3AzLYXFpKQSc++QSd8Z0WfBKUlKg1JBsh2asCRCWxEdSUbMlvfUw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/1.1.29/howler.js" integrity="sha512-RyGy20EVVyCKrHRBBoMnZBQi67ay/TV+DaqMpPqvNIuqsCpvYq2R8EA0GGQKadHGn0Pve5AS/GvYHA/3p+9OWg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+         -->
 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.js" integrity="sha512-7Zgn4mmO9yGGB1j9yP0mZvUPWBVg0fCcUMsYUV6FX7XIKQfb/dhGxsKh794YAzXH2F/+Z3eJL4mrTilrT2ZeFQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js" integrity="sha512-xi/RZRIF/S0hJ+yJJYuZ5yk6/8pCiRlEXZzoguSMl+vk2i3m6UjUO/WcZ11blRL/O+rnj94JRGwt/CHbc9+6EA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.core.min.js" integrity="sha512-d00Brs/+XQUUaO0Y9Uo8Vw63o7kS6ZcLM2P++17kALrI8oihAfL4pl1jQObeRBgv06j7xG0GHOhudAW0BdrycA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        
         <!-- Bootstrap CSS v5.2.1 -->
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
@@ -22,34 +29,47 @@
         />
 
          <!--Your custom css file -->
-         <link rel="stylesheet" href="../css/w5style.css">
+         <link rel="stylesheet" href="../css/w5test.css">
 
     </head>
 
     <body>
 
-        
+        <div class="container">
+            <div class="music-player">
+                <!-- Controls -->
+                <div class="controlsOuter">
+                    <div class="controlsInner">
+                    <div class="btn" id="playBtn"></div>
+                    <div class="btn" id="pauseBtn"></div>
+                </div>
+            </div>
+        </div>
 
+         <!--
+        <button id='howler-play'>Play</button>
+        <button id='howler-pause'>Pause</button>
+        <button id='howler-stop'>Stop</button>
+        <button id='howler-volup'>Vol+</button>
+        <button id='howler-voldown'>Vol-</button>
+           
+ 
         <div class="container mt-4">
             <div class="row">
                 <div class="col text-center">
                     <button id="button1" class="btn btn-danger">Play Song</button>
-                </div>
+                </div> 
                 <div class="col text-center">
                     <button id="button2" class="btn btn-primary">Play/Pause</button>
                 </div>
-
-                <div class="col text-center">
-                    <div class="btn" id="playBtn"></div>
-                    <div class="btn" id="pauseBtn"></div>
-                </div>
-                
-                
-            
             </div>
         </div>
-    
+ -->
 
+
+
+
+       
 
        
         <script
@@ -67,6 +87,9 @@
        
         <script src="../js/w5extra.js"></script>
         <script src="../../js/howler.core.js"></script>
+        
+        
+        
     </body>
 </html>
 
