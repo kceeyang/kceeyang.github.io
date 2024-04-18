@@ -1,11 +1,10 @@
-document.getElementById("button1").addEventListener("click", playSound);
-
 var sound2 = new Howl(
   {src:['../audio/Cruel_Summer.mp3'], 
   onend: function() 
   {console.log('Finished!');}}
 );
 
+document.getElementById("button1").addEventListener("click", playSound);
 
 function playSound()
 {
@@ -24,7 +23,8 @@ function togglePlay()
 
 // Cache references to DOM elements.
 var elms = ['track', 'timer', 'duration', 'playBtn', 'pauseBtn', 'prevBtn', 'nextBtn', 'playlistBtn', 'volumeBtn', 'progress', 'bar', 'wave', 'loading', 'playlist', 'list', 'volume', 'barEmpty', 'barFull', 'sliderBtn'];
-elms.forEach(function(elm) {
+elms.forEach(function(elm) 
+{
   window[elm] = document.getElementById(elm);
 });
 
@@ -33,7 +33,9 @@ elms.forEach(function(elm) {
  * Includes all methods for playing, skipping, updating the display, etc.
  * @param {Array} playlist Array of objects with playlist song details ({title, file, howl}).
  */
-var Player = function(playlist) {
+
+var Player = function(playlist) 
+{
   this.playlist = playlist;
   this.index = 0;
 
@@ -41,16 +43,19 @@ var Player = function(playlist) {
   track.innerHTML = '1. ' + playlist[0].title;
 
   // Setup the playlist display.
-  playlist.forEach(function(song) {
+  playlist.forEach(function(song) 
+  {
     var div = document.createElement('div');
     div.className = 'list-song';
     div.innerHTML = song.title;
-    div.onclick = function() {
+    div.onclick = function() 
+    {
       player.skipTo(playlist.indexOf(song));
     };
     list.appendChild(div);
   });
 };
+
 Player.prototype = {
   /**
    * Play a song in the playlist.
@@ -72,7 +77,7 @@ Player.prototype = {
         src: ['../audio/' + data.file + '.mp3'],
         html5: true, // Force to HTML5 so that the audio can stream in (best for large files).
         
-        
+
         onplay: function() {
           // Display the duration.
           duration.innerHTML = self.formatTime(Math.round(sound.duration()));
@@ -81,9 +86,7 @@ Player.prototype = {
           requestAnimationFrame(self.step.bind(self));
          
           // Start the wave animation if we have already loaded
-          //wave.container.style.display = 'block';
           bar.style.display = 'none';
-         //pauseBtn.style.display = 'block';  
           pauseBtn.style.display = 'none';  
         }, 
         /* 
@@ -127,11 +130,13 @@ Player.prototype = {
     track.innerHTML = (index + 1) + '. ' + data.title;
 
     // Show the pause button.
-    if (sound.state() === 'loaded') {
+    if (sound.state() === 'loaded') 
+    {
       playBtn.style.display = 'none';
       pauseBtn.style.display = 'block';
-    } else {
-      //loading.style.display = 'block';
+    } 
+    else 
+    {
       playBtn.style.display = 'none';
       pauseBtn.style.display = 'block';
     }

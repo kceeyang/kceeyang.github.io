@@ -1,149 +1,85 @@
+var sound2 = new Howl(
+  {src:['../audio/Cruel_Summer.mp3'],
+  volume: 0.5, 
+  loop: true,
+  autoplay: false,
+  onend: function() 
+  {console.log('Finished!');}}
+);
+
+//document.getElementById("button1").addEventListener("click", playSound);
 
 
-
-//import {Howl, Howler} from 'howler';
-//const {Howl, Howler} = require('howler');
-
-//document.getElementById("button1").addEventListener("click", playMusic);
-
-var sound = new Howl({
-    src:['../audio/Attention.mp3'],
-
-});
-
-function playMusic()
+button1.addEventListener("click", playSound1);
+function playSound1()
 {
-    sound.play()
+   sound2.play();
 }
 
-//document.getElementById("howler-play").addEventListener("click", sound.play());
-//document.getElementById("howler-pause").addEventListener("click", sound.pause());
-//document.getElementById("howler-stop").addEventListener("click", sound.stop());
-//document.getElementById("howler-volup").addEventListener("click", volumeUp);
+//button1.addEventListener("click", sound2.play());
 
+button3.addEventListener("click", playSound);
 
-// $(function(){
-
-// 	var howler_example = new Howl({
-// 		src: ['../audio/Cruel_Summer.mp3'],
-// 		volume: 0.5,
-//         onend: function() {
-//             $("#howler-play").removeClass("btn-success");
-//         },
-//         onplay: function() {
-//             $("#howler-play").addClass("btn-success");
-//         }
-// 	});
-
-// 	$("#howler-play").on("click", function(){
-// 		howler_example.play();
-// 	});
-
-// 	$("#howler-pause").on("click", function(){
-// 		howler_example.pause();
-// 	});
-
-// 	$("#howler-stop").on("click", function(){
-// 		howler_example.stop();
-// 	});
-
-// 	$("#howler-volup").on("click", function(){
-// 		var vol = howler_example.volume();
-// 		vol += 0.1;
-// 		if (vol > 1) {
-// 			vol = 1;
-// 		}
-// 		howler_example.volume(vol);
-// 	});
-
-// 	$("#howler-voldown").on("click", function(){
-// 		var vol = howler_example.volume();
-// 		vol -= 0.1;
-// 		if (vol < 0) {
-// 			vol = 0;
-// 		}
-// 		howler_example.volume(vol);
-// 	});
-
-// });
-
-
-
-// function volumeUp(){
-//     var vol = sound.volume();
-//     vol += 0.1;
-//     if (vol > 1) 
-//     {
-//         vol = 1;
-//     }
-//     sound.volume(vol);
-// }
-
-
-if (sound.playing())
+function playSound()
 {
-    document.getElementById("button2").addEventListener("click", pauseMusic());
-    console.log('pause!');
-}
-else{
-    document.getElementById("button2").addEventListener("click", playMusic());
-    console.log('play!');
-}
-//document.getElementById("button2").addEventListener("click", playMusic());
-//document.getElementById("button2").addEventListener("click", pauseMusic());
-
-function pauseMusic(){
-    //if (sound.playing())
-    //{
-        console.log('pause!');
-        sound.pause()
-        //sound.play()
-   // }
+  if (sound2 != null)
+  {
+      sound2.stop();
+  }   
+  sound2.play();
 }
 
 
-// document.getElementById("button2").addEventListener("click", togglePlay());
-
-// function togglePlay()
-// {
-//     return sound.playing() ? sound.pause() : sound.play();
-// };
-
-
-
-////////////////////////////
 
 
 
 
+//document.getElementById("button2").addEventListener("click", togglePlayPause);
+
+button2.addEventListener("click", togglePlayPause);
+function togglePlayPause()
+{
+    return sound2.playing() ? sound2.pause() : sound2.play();
+};
+
+
+///////////////////////
 
 
 
 
- /**
+/**
  * Player class containing the state of our playlist and where we are in it.
  * Includes all methods for playing, skipping, updating the display, etc.
  * @param {Array} playlist Array of objects with playlist song details ({title, file, howl}).
  */
 
-var Player = function(playlist) {
+var Player = function(playlist) 
+{
   this.playlist = playlist;
   this.index = 0;
-
   // Display the title of the first track.
   track.innerHTML = '1. ' + playlist[0].title;
-
+  
   // Setup the playlist display.
-  playlist.forEach(function(song) {
+  playlist.forEach(function(song) 
+  {
     var div = document.createElement('div');
     div.className = 'list-song';
     div.innerHTML = song.title;
-    div.onclick = function() {
+    div.onclick = function() 
+    {
       player.skipTo(playlist.indexOf(song));
     };
     list.appendChild(div);
   });
 };
+
+
+
+
+
+
 
 Player.prototype = 
 {
@@ -151,39 +87,39 @@ Player.prototype =
    * Play a song in the playlist.
    * @param  {Number} index Index of the song in the playlist (leave empty to play the first or current).
    */
-  play: function(index) {
+  play: function(index) 
+  {
     var self = this;
     var sound;
 
     index = typeof index === 'number' ? index : self.index;
     var data = self.playlist[index];
 
+
     // If we already loaded this track, use the current one.
     // Otherwise, setup and load a new Howl.
     if (data.howl) 
     {
       sound = data.howl;
-    } else 
+    } 
+    else 
     {
       sound = data.howl = new Howl
       ({
         src: ['../audio/' + data.file + '.mp3'],
-        html5: true, // Force to HTML5 so that the audio can stream in (best for large files).
-          
-        onplay: function() 
-        {
-          // Display the duration.
+        html5: true,  // Force to HTML5 so that the audio can stream in (best for large files).
+        onplay: function() {
+           // Display the duration.
           duration.innerHTML = self.formatTime(Math.round(sound.duration()));
-
           // Start updating the progress of the track.
           requestAnimationFrame(self.step.bind(self));
-
-          // Start the wave animation if we have already loaded
-          bar.style.display = 'none';
-          pauseBtn.style.display = 'none';  
-        } 
-    });    
+        }     
+      });    
     }
+
+
+
+
 
     // Begin playing the sound.
     sound.play();
@@ -192,10 +128,13 @@ Player.prototype =
     track.innerHTML = (index + 1) + '. ' + data.title;
 
     // Show the pause button.
-    if (sound.state() === 'loaded') {
+    if (sound.state() === 'loaded') 
+    {
       playBtn.style.display = 'none';
       pauseBtn.style.display = 'block';
-    } else {
+    } 
+    else 
+    {
       playBtn.style.display = 'none';
       pauseBtn.style.display = 'block';
     }
@@ -215,119 +154,119 @@ Player.prototype =
 
     // Puase the sound.
     sound.pause();
- 
+
     // Show the play button.
     playBtn.style.display = 'block';
     pauseBtn.style.display = 'none';
   },
 
   /**
-   * Seek to a new position in the currently playing track.
-   * @param  {Number} per Percentage through the song to skip.
+   * Skip to the next or previous track.
+   * @param  {String} direction 'next' or 'prev'.
    */
-  seek: function(per) {
-    var self = this;
 
+  skip: function(direction) 
+  {
+    var self = this;
+    var index = 0;
+// Get the next track based on the direction of the track.
+    if (direction === 'prev') {
+      index = self.index - 1;
+      if (index < 0) {
+        index = self.playlist.length - 1;
+      }
+    } else {
+      index = self.index + 1;
+      if (index >= self.playlist.length) {
+        index = 0;
+      }
+    }
+
+    self.skipTo(index);
+  },
+
+  /**
+   * Skip to a specific track based on its playlist index.
+   * @param  {Number} index Index in the playlist.
+   */
+
+  skipTo: function(index) {
+    var self = this;
+ // Stop the current track.
+    if (self.playlist[self.index].howl) {
+      self.playlist[self.index].howl.stop();
+    }
+ // Play the new track.
+    self.play(index);
+  },
+
+
+
+
+
+
+  step: function() {
+    var self = this;
     // Get the Howl we want to manipulate.
     var sound = self.playlist[self.index].howl;
-
-    // Convert the percent into a seek position.
+  // Determine our current seek position.
+    var seek = sound.seek() || 0;
+    timer.innerHTML = self.formatTime(Math.round(seek));
+    // If the sound is still playing, continue stepping.
     if (sound.playing()) {
-      sound.seek(sound.duration() * per);
+      requestAnimationFrame(self.step.bind(self));
     }
-  }
+  },
 
   
+
+  /**
+   * Format the time from seconds to M:SS.
+   * @param  {Number} secs Seconds to format.
+   * @return {String}      Formatted time.
+   */
+  
+  formatTime: function(secs) {
+    var minutes = Math.floor(secs / 60) || 0;
+    var seconds = (secs - minutes * 60) || 0;
+
+    return minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
+  }
+
 };
+
 
 
 // Setup our new audio player class and pass it the playlist.
 var player = new Player([
-    {
-      title: 'Cruel Summer - Taylor Swift',
-      file: 'Cruel_Summer',
-      howl: null
-    }
-  ]);
-
+  {
+    title: 'Cruel Summer - Taylor Swift',
+    file: 'Cruel_Summer',
+    howl: null
+  },
+  {
+    title: 'Attention - NewJeans',
+    file: 'Attention',
+    howl: null
+  },
+  {
+    title: "Entertainer - I don't like Monday",
+    file: 'ENTERTAINER',
+    howl: null
+  }
+]);
 
 // Bind our player controls.
 
-//playBtn.addEventListener('click', function()
-document.getElementById("playBtn").addEventListener('click', function() {
-  sound.play();
+playBtn.addEventListener('click', function() {
+  player.play();
 });
-//pauseBtn.addEventListener('click', function() 
-document.getElementById("pauseBtn").addEventListener('click', function() {
-  sound.pause();
+pauseBtn.addEventListener('click', function() {
+  player.pause();
 });
-
-
-
-
-//////////////////////////////////
-// document.getElementById("button2").addEventListener("click", TogglePause());
-
-// var myMusicID = sound.play();   // The docs say play() returns an ID, and I'll be passing that to "seek" later.
-// var paused = false;
-// var saveSeek;
-// function TogglePause() {
-
-//     if (paused) {
-//         sound.play(myMusicID);
-//         sound.seek(saveSeek, myMusicID);
-//     } else {
-//         sound.pause();
-//         saveSeek = sound.seek(myMusicID);
-//     }
-// };
-
-
-
-
-
-
-
-
-////////////////////////////////////////////////////////////////////
-
-
-
-
-
-// $(document).ready(function() {
-
-// 	// THE BASICS
-	
-// 	var trumpet = new Howl({
-// 	  src: ['../audio/Attention.mp3'],
-// 	  onend: function() {
-// 	  	$("#trumpet-play").removeClass("btn-success");
-// 	  },
-// 	  onplay: function() {
-// 	  	$("#trumpet-play").addClass("btn-success");
-// 	  }
-// 	});
-
-
-	
-
-// 	$("#trumpet-play").click(function() {
-// 		trumpet.play();
-// 	});
-
-// 	$("#trumpet-pause").click(function() {
-// 		trumpet.pause();
-// 	});
-
-// 	$("#trumpet-stop").click(function() {
-// 		trumpet.stop();
-// 		$("#trumpet-play").removeClass("btn-success");
-// 	});
-
-// 	// ======
-
-
-	
-
-// });
+prevBtn.addEventListener('click', function() {
+  player.skip('prev');
+});
+nextBtn.addEventListener('click', function() {
+  player.skip('next');
+});
