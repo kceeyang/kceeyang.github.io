@@ -2,6 +2,9 @@ nav {
     background-color: #800000;
     letter-spacing: 0.5px;
 }
+.navbar-brand{
+  text-indent: 1em; 
+}
 
 h1 {
   padding: 20px;

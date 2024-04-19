@@ -15,3 +15,6 @@ p.paragraph{
 nav {
     background-color: #800000;
 }
+.navbar-brand{
+    text-indent: 1em; 
+}
