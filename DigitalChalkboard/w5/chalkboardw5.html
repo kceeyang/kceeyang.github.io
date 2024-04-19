@@ -53,6 +53,7 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="../../DigitalChalkboard/w3/chalkboardw3.html">Week 03</a>
                             <a class="dropdown-item" href="../../DigitalChalkboard/w4/chalkboardw4.html">Week 04</a>
+                            <a class="dropdown-item" href="../../DigitalChalkboard/w5/chalkboardw5.html">Week 05</a>
                         </div>
                     </li>
         
@@ -60,12 +61,13 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown_02" role="button" data-bs-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
-                        Technical
+                        Technical Presentation
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="../../TechnicalPresentation/w2/HelloWorld.html">Week 02</a>
                         <a class="dropdown-item" href="../../TechnicalPresentation/w3/technicalw3.html">Week 03</a>
                         <a class="dropdown-item" href="../../TechnicalPresentation/w4/technicalw4.html">Week 04</a>
+                        <a class="dropdown-item" href="../../TechnicalPresentation/w5/technicalw5.html">Week 05</a>
                     </li>
         
         
@@ -88,14 +90,14 @@
         </header>
         <main></main>
         
+        <h1>Week 5 Digital Chalkboard</h1>
+        <p id="paragraph">Below are 2 examples of input form. You can use the "Enter" key or the "Submit" button to get the result.</p>
         
         <footer>
             <!-- place footer here -->
-
-
             <!-- Trivia Question Form -->
             <div id="trivia">
-                <p>Trivia question</p>
+                <p id="question-title">Trivia question</p>
                 <p>Q: What is the captial of France?</p>
                 <input type="text" id="trivia-answer" placeholder="Your answer">
                 <button onclick="checkTriviaAnswer()">Submit</button>
@@ -104,14 +106,15 @@
 
 
             <!-- Number Check Form -->
-            <div id="number-checl">
-                <p>Number Check</p>
-                <p>Enter a five digit number like 12345.</p>
+            <div id="number-check">
+                <p id="question-title">Number Check</p>
+                <p>Please enter a five digit number like 12345.</p>
                 <input type="text" id="number-input" placeholder="5-digit number">
-                <button onclick="checkNumber()">Submit</button>
+                <button id="number-submit" onclick="checkNumber()">Submit</button>
                 <div id="number-response"></div>
             </div>
-
+        
+        
 
 
         </footer>

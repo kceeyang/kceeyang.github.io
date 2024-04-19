@@ -3,9 +3,10 @@ h1 {
     padding: 20px;
   }
   
-p{
+#paragraph{
     padding: 20px;
 }
+
 
 nav {
     background-color: #800000;
@@ -23,8 +24,20 @@ footer{
 }
 
 .container{
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
+
+
+#trivia{
+    margin-bottom: 70px; 
+}
+
+#number-check{
+    margin-top: 70px; 
+}
+
+
+
 
 button{
     background-color: blue;
@@ -48,3 +61,8 @@ input{
     margin-top: 10px;
     font-weight: bold;
 }
+
+#question-title{
+    font-weight: bold;
+}
+
