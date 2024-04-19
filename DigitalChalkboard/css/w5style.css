@@ -1,0 +1,50 @@
+h1 {
+    color: #880000;
+    padding: 20px;
+  }
+  
+p{
+    padding: 20px;
+}
+
+nav {
+    background-color: #800000;
+    letter-spacing: 0.5px;
+}
+.navbar-brand{
+    text-indent: 1em; 
+}
+
+
+
+footer{
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+.container{
+    margin-bottom: 20px;
+}
+
+button{
+    background-color: blue;
+    color: white;
+    padding: 10px 15px;
+    border:none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input{
+    padding: 10px;
+    margin: 10px 0;
+    border:2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#trivia-response, #number-response{
+    margin-top: 10px;
+    font-weight: bold;
+}
