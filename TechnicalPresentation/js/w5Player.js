@@ -6,18 +6,85 @@ var sound2 = new Howl(
 
 document.getElementById("button1").addEventListener("click", playSound);
 
+//restart the song every time when hitting the "play song" button
 function playSound()
 {
+    if (sound2 != null)
+    {
+        sound2.stop();
+    }   
     sound2.play();
 }
 
-
+// play or pause the song when hitting the "Play/Pause" button
 document.getElementById("button2").addEventListener("click", togglePlay);
 
 function togglePlay()
 {
     return sound2.playing() ? sound2.pause() : sound2.play();
 };
+
+
+
+
+////////////////////////////////////////////////
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  var animalTitles = document.getElementsByClassName('animalTitle');
+
+  const animalObject = new Object();
+
+  for(element of animalTitles)
+  {
+    animalObject[element.nextElementSibling.id] = element.innerHTML
+  }
+  for (const property in animalObject)
+  {
+    document.getElementById(property).addEventListener('click', () => {
+      playAnimal(animalObject[property]);
+    })
+  }
+
+  // Use the Object to add mouse event behavior to style the item.
+  for (const property in animalObject){
+    document.getElementById(property).addEventListener('mouseover', mouseOverHandler)
+    document.getElementById(property).addEventListener('mouseout', mouseOutHandler)
+  }
+
+  function mouseOverHandler() 
+  {
+    this.style.border = '3px solid red';
+  }
+  function mouseOutHandler() 
+  {
+    this.style.border = '0px';
+  }
+});
+
+function playAnimal(animalSound) 
+{
+  var sound3 = new Howl
+  ({
+    src: [`../audio/${animalSound}.mp3`],
+    sprite: {
+      Puppy: [0, 3000],
+      Kitten: [0, 3000],
+    }
+  });
+  sound3.play(animalSound);
+}
+
+
+
+
+
+////////////////////////////////////////////////
+
+
+
+
 
 
 

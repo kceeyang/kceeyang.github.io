@@ -58,6 +58,7 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="../../DigitalChalkboard/w3/chalkboardw3.html">Week 03</a>
                             <a class="dropdown-item" href="../../DigitalChalkboard/w4/chalkboardw4.html">Week 04</a>
+                            <a class="dropdown-item" href="../../DigitalChalkboard/w5/chalkboardw5.html">Week 05</a>
                         </div>
                     </li>
         
@@ -65,7 +66,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown_02" role="button" data-bs-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
-                        Technical
+                        Technical Presentation
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="../../TechnicalPresentation/w2/HelloWorld.html">Week 02</a>
@@ -91,17 +92,46 @@
             <!-- place navbar here -->
         </header>
         <main></main>
-        <footer>
-            <!-- place footer here -->
-        </footer>
+       <!--  <footer>
+            place footer here
+        </footer> -->
 
 
         <h1>Week 5 Technical Presentation</h1>
         
-        <p id="question">Below are some examples of implementing the Howler.js library.</p> 
+       <!-- <p id="question">Below are some examples of implementing the Howler.js library.</p> -->
+
+
+
+        <div class="container-fluid">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="h3 py-3">Click an image to hear the sound!</div>
+                    
+                    <div class="col-lg-3">
+                        <h2 class="animalTitle">Puppy</h2>
+                        <img id="animal01" src="../images/w5img.jpg" class="img-thumbnail howlerImage" alt="Puppy">
+                    </div>
+                    
+                    <div class="col-lg-3">
+                        <h2 class="animalTitle">Kitten</h2>
+                        <img id="animal02" src="../images/w4img3.jpg" class="img-thumbnail howlerImage" alt="Kitten">
+                    </div>
+    
+                
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
 
 
             <div class="container mt-4">
+                <div class="h3">Try the two buttons to play (or pause) the song.</div>
                 <div class="row">
                     <div class="col text-center">
                         <button id="button1" class="btn btn-danger">Play Song</button>
@@ -109,22 +139,65 @@
                     <div class="col text-center">
                         <button id="button2" class="btn btn-primary">Play/Pause</button>
                     </div>
+
+
+                    <div class="music-player">
+                        <!-- Top Info -->
+                        <div id="title">
+                            <span id="track"></span>
+                            <div id="timer">0:00</div>
+                            <div id="duration">0:00</div>
+                        </div>
+        
+                        <!-- Controls -->
+                        <div class="controlsOuter">
+                            <div class="controlsInner">
+                            <div id="loading"></div>
+                            <div class="btn" id="playBtn"></div>
+                            <div class="btn" id="pauseBtn"></div>
+                            <div class="btn" id="prevBtn"></div>
+                            <div class="btn" id="nextBtn"></div>
+                            </div>
+                            <div class="btn" id="playlistBtn"></div>
+                            <div class="btn" id="volumeBtn"></div>
+                        </div>
+        
+        
+                        <!-- Playlist -->
+                        <div id="playlist">
+                            <div id="list"></div>
+                        </div>
+        
+        
+                        <!-- Volume -->
+                        <div id="volume" class="fadeout">
+                            <div id="barFull" class="bar"></div>
+                            <div id="barEmpty" class="bar"></div>
+                            <div id="sliderBtn"></div>
+                        </div>
+                   
+                    </div>
+
+
+
                 </div>
+
+           
             </div>    
             
 
     
-
+        <!-- 
         <div class="container">
             <div class="music-player">
-                <!-- Top Info -->
+                
                 <div id="title">
                     <span id="track"></span>
                     <div id="timer">0:00</div>
                     <div id="duration">0:00</div>
                 </div>
 
-                <!-- Controls -->
+                
                 <div class="controlsOuter">
                     <div class="controlsInner">
                     <div id="loading"></div>
@@ -138,13 +211,13 @@
                 </div>
 
 
-                <!-- Playlist -->
+                
                 <div id="playlist">
                     <div id="list"></div>
                 </div>
 
 
-                <!-- Volume -->
+               
                 <div id="volume" class="fadeout">
                     <div id="barFull" class="bar"></div>
                     <div id="barEmpty" class="bar"></div>
@@ -154,7 +227,7 @@
             </div>
         </div>
 
-
+    -->
 
         <!-- Bootstrap JavaScript Libraries -->
         <script

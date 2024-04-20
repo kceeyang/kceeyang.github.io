@@ -17,6 +17,7 @@ p{
   padding: 20px;
 }
 
+
 body{
   padding: 0;
   margin: 0;
@@ -28,11 +29,18 @@ body{
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 } 
 
-
 .container{
   padding: 0;
   margin: 0;
+  margin-bottom: 70px; 
 }
+
+.music-player{
+  margin-top: 70px; 
+}
+
+
+
   /* Top Info */
   #title {
     
@@ -189,6 +197,8 @@ body{
     animation: sk-scaleout 1.0s infinite ease-in-out;
     display: none;
   }
+
+
   @-webkit-keyframes sk-scaleout {
     0% { -webkit-transform: scale(0) }
     100% {
@@ -280,9 +290,11 @@ body{
     box-shadow: none;
     cursor: pointer;
   }
+  
   #barFull {
     width: 90%;
   }
+
   #sliderBtn {
     width: 50px;
     height: 50px;
