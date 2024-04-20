@@ -14,15 +14,6 @@ function checkTriviaAnswer()
     }
 }
 
-function ltrim(x, characters) {
-    var start = 0;
-    while (characters.indexOf(x[start]) >= 0) {
-      start += 1;
-    }
-    var end = x.length - 1;
-    return x.substr(start);
-  }
-
 
 function checkNumber()
 {
