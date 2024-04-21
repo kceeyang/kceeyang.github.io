@@ -22,7 +22,7 @@
         />
 
         <!--Your custom css file -->
-        <link rel="stylesheet" href="../css/w5style.css">
+        <link rel="stylesheet" href="../css/w5extraStyle.css">
 
     </head>
 
@@ -58,6 +58,8 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="../../DigitalChalkboard/w3/chalkboardw3.html">Week 03</a>
                             <a class="dropdown-item" href="../../DigitalChalkboard/w4/chalkboardw4.html">Week 04</a>
+                            <a class="dropdown-item" href="../../DigitalChalkboard/w5/chalkboardw5.html">Week 05</a>
+
                         </div>
                     </li>
         
@@ -65,13 +67,16 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown_02" role="button" data-bs-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
-                        Technical
+                        Technical Presentation
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="../../TechnicalPresentation/w2/HelloWorld.html">Week 02</a>
                         <a class="dropdown-item" href="../../TechnicalPresentation/w3/technicalw3.html">Week 03</a>
                         <a class="dropdown-item" href="../w4/technicalw4.html">Week 04</a>
                         <a class="dropdown-item" href="../w5/technicalw5.html">Week 05</a>
+
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="../w5/extra.html">W5 Presentation Page</a>
                     </li>
         
         
@@ -104,10 +109,10 @@
             <div class="container mt-4">
                 <div class="row">
                     <div class="col text-center">
-                        <button id="button1" class="btn btn-danger">Play Song</button>
+                        <button id="button1" class="btn btn-danger">Play Song (with Issue)</button>
                     </div>
                     <div class="col text-center">
-                        <button id="button3" class="btn btn-danger">Play Song</button>
+                        <button id="button3" class="btn btn-danger">Play Song (Fixed)</button>
                     </div>
                     <div class="col text-center">
                         <button id="button2" class="btn btn-primary">Play/Pause</button>
@@ -119,7 +124,7 @@
             
 
             <div class="container">
-                <div class="music-player">
+                <div id="music-player">
                     
                     <div id="title">
                         <span id="track"></span>
@@ -143,7 +148,7 @@
                 </div>
             </div>
 
-
+        
 
         <!-- Bootstrap JavaScript Libraries -->
         <script
@@ -158,7 +163,7 @@
             crossorigin="anonymous"
         ></script>
         
-        <script src="howler.core.js"></script>
+       
         <script src="../js/w5extra.js"></script>
 
 
