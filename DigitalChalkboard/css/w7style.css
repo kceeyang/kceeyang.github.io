@@ -1,0 +1,39 @@
+nav {
+    background-color: #800000;
+    letter-spacing: 0.5px;
+}
+.navbar-brand{
+    text-indent: 1em; 
+}
+
+h1 {
+    color: #880000;
+    padding: 20px;
+  }
+#paragraph{
+    padding: 20px;
+}
+
+
+#map { 
+    height: 400px; 
+    width: 600px;
+    position:relative;
+    outline-style: none;
+}
+table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-bottom: 2em;
+}
+
+th, td {
+	text-align: left;
+	border: 0;
+	border: 1px solid #eee;
+	padding: 0.5em 1em 0.5em 1em;
+}
+
+iframe {
+	border: none;
+}
