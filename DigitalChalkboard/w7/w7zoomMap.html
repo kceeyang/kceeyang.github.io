@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Title</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <!-- Bootstrap CSS v5.2.1 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+
+
+        <!--Your custom css file -->
+        <link rel="stylesheet" href="../css/w7style.css">
+
+
+         <!--Leaflet CSS file  -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin=""/>
+
+        <!-- Leaflet JavaScript file, Make sure you put this AFTER Leaflet's CSS -->
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+        crossorigin=""></script>
+
+        <style>
+            /**
+             * base map styles
+             * position and height are required by Leaflet
+             * inline styles are removed by Leaflet.Control.ZoomFS so be sure to declare a height in your base CSS!
+             * you can get away without delcaring a position, but it's recommended...
+             */
+            #map {
+              height: 433px;
+              width: 700px;
+              margin: 50px auto;
+            }
+        
+            /**
+             * you can customize this class however you need to.
+             * the important rules are position, width, height
+            */
+            #map.leaflet-fullscreen {
+              position: fixed;
+              width: 100%;
+              height: 100%;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              margin: 0;
+              padding: 0;
+              border: 0;
+            }
+        
+            /**
+             * there are no internal button styles; you must add your own like this:
+             */
+            .leaflet-control-fullscreen {
+              background-image: url(http://f.cl.ly/items/0W2V081o1h3p013P2v46/icon-fullscreen.png);
+            }
+        
+          </style>
+
+
+
+    </head>
+
+    <body>
+
+    
+
+        <!--<div id="map" ></div>  -->
+        <div id="map"></div>
+
+        
+
+        <header>
+            <!-- place navbar here -->
+        </header>
+        <main></main>
+        <footer>
+            <!-- place footer here -->
+        </footer>
+        <!-- Bootstrap JavaScript Libraries -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"
+        ></script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"
+        ></script>
+   
+   
+        <script src="../js/w7leaflet.zoomfs.js"></script> 
+        <script>
+
+            ///https://github.com/elidupuis/leaflet.zoomfs/tree/master
+
+            
+            // init map without default zoom controls
+            var map = new L.Map('map', { zoomControl: false });
+    
+            // create tile layer and center map: default Leaflet stuff
+            var osmTiles = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a>',
+                maxZoom: 18
+            });
+    
+            var uchi = new L.LatLng(41.789722, -87.599724);
+            map.setView(uchi, 15).addLayer(osmTiles);
+    
+
+            L.marker([41.789722, -87.599724]).addTo(map)
+            .bindPopup('University of Chicago <br> (41.789722, -87.599724)')
+            .openPopup();
+
+            // create custom zoom control with fullscreen button
+            var zoomFS = new L.Control.ZoomFS();
+    
+            // add custom zoom control
+            map.addControl(zoomFS);
+    
+            // you can bind to 2 events: enterFullscreen and exitFullscreen
+            // note that these events are on the map object, not the zoomfs object...
+            map.on('enterFullscreen', function() {
+                if (window.console) window.console.log('enterFullscreen');
+            });
+            map.on('exitFullscreen', function() {
+                if (window.console) window.console.log('exitFullscreen');
+            });
+        </script>
+   
+    </body>
+</html>
