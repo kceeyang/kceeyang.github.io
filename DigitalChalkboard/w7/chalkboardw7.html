@@ -22,6 +22,59 @@
         <link rel="stylesheet" href="../css/w7style.css">
 
 
+
+
+        <!--to add full-screen function map  -->
+        <!--Leaflet CSS file  -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin=""/>
+
+        <!-- Leaflet JavaScript file, Make sure you put this AFTER Leaflet's CSS -->
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+        crossorigin=""></script>
+        <style>
+            /**
+             * base map styles
+             * position and height are required by Leaflet
+             * inline styles are removed by Leaflet.Control.ZoomFS so be sure to declare a height in your base CSS!
+             * you can get away without delcaring a position, but it's recommended...
+             */
+            #map {
+              height: 400px;
+              width: 600px;
+              margin: 50px auto;
+            }
+        
+            /**
+             * you can customize this class however you need to.
+             * the important rules are position, width, height
+            */
+            #map.leaflet-fullscreen {
+              position: fixed;
+              width: 100%;
+              height: 100%;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              margin: 0;
+              padding: 0;
+              border: 0;
+            }
+        
+            /**
+             * there are no internal button styles; you must add your own like this:
+             */
+            .leaflet-control-fullscreen {
+              background-image: url(http://f.cl.ly/items/0W2V081o1h3p013P2v46/icon-fullscreen.png);
+            }
+
+
+        
+          </style>
+
     </head>
 
     <body>
@@ -148,6 +201,23 @@
             <a href="../w7/w7zoomMap.html" id="not-nav">Full-screen Map</a>
        </p> 
 
+       <div id="map"></div>
+
+
+
+        <!-- 
+       <p id="paragraph">Below is a map example with full-screen.</p>
+        <table role = "presentation">
+            <tbody>
+                <tr>
+                    <td style="text-align: center; border:none; padding:0;">
+                        <iframe src="../w7/w7zoomMap.html" width="600" height="400" 
+                        style="max-width: 100%; max-height: 90vh; box-sizing: border-box;">
+                        </iframe>
+                    </td>
+                </tr>
+            </tbody>
+        </table> -->
 
 
         <header>
@@ -173,5 +243,48 @@
             crossorigin="anonymous"
         ></script>
    
+
+
+         <!--to add full-screen function map  -->
+        <script src="../js/w7leaflet.zoomfs.js"></script> 
+        <script>
+
+            ///https://github.com/elidupuis/leaflet.zoomfs/tree/master
+
+            
+            // init map without default zoom controls
+            var map = new L.Map('map', { zoomControl: false });
+    
+            // create tile layer and center map: default Leaflet stuff
+            var osmTiles = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a>',
+                maxZoom: 18
+            });
+    
+            var uchi = new L.LatLng(41.789722, -87.599724);
+            map.setView(uchi, 15).addLayer(osmTiles);
+    
+
+            L.marker([41.789722, -87.599724]).addTo(map)
+            .bindPopup('University of Chicago <br> (41.789722, -87.599724)')
+            .openPopup();
+
+            // create custom zoom control with fullscreen button
+            var zoomFS = new L.Control.ZoomFS();
+    
+            // add custom zoom control
+            map.addControl(zoomFS);
+    
+            // you can bind to 2 events: enterFullscreen and exitFullscreen
+            // note that these events are on the map object, not the zoomfs object...
+            map.on('enterFullscreen', function() {
+                if (window.console) window.console.log('enterFullscreen');
+            });
+            map.on('exitFullscreen', function() {
+                if (window.console) window.console.log('exitFullscreen');
+            });
+        </script>
+
+
     </body>
 </html>
