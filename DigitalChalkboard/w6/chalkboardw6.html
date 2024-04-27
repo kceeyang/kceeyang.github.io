@@ -107,13 +107,13 @@
 
             <!-- place footer here -->
 
-            <p id="paragraph">Below are 2 functions to sort items.</p>  
+            <p id="paragraph">Below are 3 functions to sort items.</p>  
             
             <div class="row mt-5">
                 <div class="col">
-                    <h3>Sort items based on given list</h3>
-                    <p><em>Default values: Watermelon, Apple, Oragne, Kiwi</em></p>
-                    <button class="btn btn-primary" onclick="lastItem(['Watermelon', 'Apple', 'Orange', 'Kiwi'])">
+                    <h3>Sort items based on a given list</h3>
+                    <p><em>Default values: Watermelon, Apple, Orange, Kiwi</em></p>
+                    <button class="btn btn-primary" onclick="lastItem(['Watermelon', 'Apple', 'Orange', 'Kiwi'], 'output1')">
                         Sort
                     </button>
                     <div id="output1" class="mt-3"></div>
@@ -123,12 +123,27 @@
 
             <div class="row mt-5">
                 <div class="col">
-                    <h3>Input and Sort items</h3>
-                    <p><em>Get user input of categories and items to sort</em></p>
-                    <button id="sortButton" class="btn btn-primary">Input Items</button>
+                    <h3>Input and Sort items (sort by items)</h3>
+                    <p><em>Get user input of categories and items, and sort by items alphabetically</em></p>
+                    <button id="sortButton2" class="btn btn-primary">Input Items</button>
+                    <div id="displayArea" class="mt-3"></div>
+                </div>
+            </div>
+
+
+            <div class="row mt-5">
+                <div class="col">
+                    <h3>Input and Sort items (sort by categories)</h3>
+                    <p><em>Get user input of categories and items, and sort by input categories alphabetically</em></p>
+                    <button id="sortButton" class="btn btn-primary" onclick = "clearcontent('displayOutput')">Input Items</button>
                     <div id="displayOutput" class="mt-3"></div>
                 </div>
             </div>
+
+
+
+           
+
 
         </footer>
         <!-- Bootstrap JavaScript Libraries -->
