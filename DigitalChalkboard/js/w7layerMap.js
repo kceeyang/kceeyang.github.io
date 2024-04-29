@@ -24,18 +24,22 @@ var robberies = L.layerGroup([r1, r2, r3, r4]);
 
 
 
-//create base layers 
-var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+//create 2 base layers 
+var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', 
+{
     maxZoom: 19,
     attribution: '© OpenStreetMap'
 });
 
-var osmHOT = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+var osmHOT = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', 
+{
     maxZoom: 19,
     attribution: '© OpenStreetMap contributors, Tiles style by Humanitarian OpenStreetMap Team hosted by OpenStreetMap France'});
 
-//add osm as the default ones to the map, also add robberies location to the map
-var map = L.map('map', {
+
+//add osm as the default one to the map object , also add robberies location to the map
+var map = L.map('map', 
+{
     center: [41.789722, -87.599724],
     zoom: 15,
     layers: [osm, robberies]
@@ -52,15 +56,20 @@ var map = L.map('map', {
 // };
 
 //make the label for the OpenStreetMap.HOT map red
-var baseMaps = {
+var baseMaps = 
+{
     "OpenStreetMap": osm,
     "<span style='color: red'>OpenStreetMap.HOT</span>": osmHOT
 };
-
-//overlayMaps objectcontains  overlays
-var overlayMaps = {
+//overlayMaps object contains overlays
+var overlayMaps = 
+{
     "Armed Robberies": robberies
 };
+
+
+
+
 
 
 //The first argument passed when creating the layers control is the base layers object. 
@@ -86,7 +95,8 @@ var reglibrary = L.marker([41.792183066077406, -87.60005188390828]).bindPopup('R
 var buildings = L.layerGroup([reglibrary, bookstore, mainquad, artcenter]);
 
 
-var openTopoMap = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+var openTopoMap = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', 
+{
     maxZoom: 19,
     attribution: 'Map data: © OpenStreetMap contributors, SRTM | Map style: © OpenTopoMap (CC-BY-SA)'
 });

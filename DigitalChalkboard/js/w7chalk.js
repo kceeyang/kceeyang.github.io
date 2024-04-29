@@ -52,14 +52,13 @@ polygon.bindPopup("UChicago Main Quad");
 
 
 
-var popup = L.popup();
+var popup = L.popup();        //declare a popup
 
-function onMapClick(e) 
+function onMapClick(e)         //create a listener function
 {
-    popup
-            .setLatLng(e.latlng)
-            .setContent("You clicked the map at " + e.latlng.toString())
-            .openOn(map);
+    popup.setLatLng(e.latlng)       //get latitude and longitude
+         .setContent("You clicked the map at " + e.latlng.toString())
+         .openOn(map);
 }
     
 map.on('click', onMapClick);
