@@ -11,7 +11,7 @@
 
         <!--jQuery CDN Link-->
         <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-
+        
         <!-- Bootstrap CSS v5.2.1 -->
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
@@ -20,20 +20,16 @@
             crossorigin="anonymous"
         />
 
-        <!-- Chart.js -->
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
         <!--Your custom css file -->
-        <link rel="stylesheet" href="../css/w6style.css">
+        <link rel="stylesheet" href="../css/w7style.css">
+
     </head>
 
     <body>
-
         <!--Nav is loaded here via jQuery-->
         <div id="nav-placeholder"></div>
 
-
-         <!--
+        <!-- 
         <nav class="navbar navbar-expand-lg navbar-dark container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,7 +44,6 @@
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
-                    
         
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdown_01" role="button" data-bs-toggle="dropdown"
@@ -60,6 +55,7 @@
                             <a class="dropdown-item" href="../../DigitalChalkboard/w4/chalkboardw4.html">Week 04</a>
                             <a class="dropdown-item" href="../../DigitalChalkboard/w5/chalkboardw5.html">Week 05</a>
                             <a class="dropdown-item" href="../../DigitalChalkboard/w6/chalkboardw6.html">Week 06</a>
+                            <a class="dropdown-item" href="../../DigitalChalkboard/w7/chalkboardw7.html">Week 07</a>
                         </div>
                     </li>
         
@@ -75,6 +71,7 @@
                         <a class="dropdown-item" href="../w4/technicalw4.html">Week 04</a>
                         <a class="dropdown-item" href="../w5/technicalw5.html">Week 05</a>
                         <a class="dropdown-item" href="../w6/technicalw6.html">Week 06</a>
+                        <a class="dropdown-item" href="../w7/technicalw7.html">Week 07</a>
                         
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="../w5/extra.html">W5 Presentation Page</a>
@@ -92,57 +89,67 @@
                 </ul>
             </div>
         </nav>
--->
+    -->
 
-        <h1>Week 6 Technical Presentation</h1>
 
+        <h1>Week 7 Technical Presentation</h1>
+
+        
+        
 
         <header>
             <!-- place navbar here -->
         </header>
         <main></main>
-        
-        
+
         <footer>
             <!-- place footer here -->
             
-        
-            <!-- <p id="question">Below are some examples of implementing the Howler.js library.</p> -->
-     
-            <p>2 examples of chart</p>   
+           <!--   <h3 id="title"></h3>
+            <div id="ochreContainer" data-uuid='6f18e3a7-a396-46d9-85cb-92674c24cfc0'>
+                <div>
+                    <table class="'table table-striped table-bordered">
+                        <tbody id="ochreTableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+-->
+            <h2>OCHRE API</h2>
+
+            <div class="container mt-3" id="ochreContainer" data-uuid = '6f18e3a7-a396-46d9-85cb-92674c24cfc0'>
+                <h3 id="title"></h1>
+                <table class="table table-striped order-table" id="ochreTable">
+                    <thead class="thread-dark" id="ochreTableColumns">
+                        <tr>
+                            <th style="text-align: left; width: 30%;">Property</th>
+                            <th style="text-align: left; width: 30%;">Value</th>                
+                        </tr>
+                    </thead>
+                    <tbody id="ochreTableBody">
+                    </tbody>
+                </table>
+            </div>
+
+                
+            
 
 
-            <p id="paragraph">Below is a bar chart example.</p>
-            <table role = "presentation">
-                <tbody>
-                    <tr>
-                        <td style="text-align: center; border:none; padding:0;">
-                            <iframe src="../w6/w6barChart.html" width="600" height="400" 
-                            style="max-width: 100%; max-height: 90vh; box-sizing: border-box;">
-                            </iframe>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="container mt-4 mb-4">
+                <div class = "row">
+                    <div class = "col text-center">
+                        <a href="../w7/w7xml2.html" class="btn btn-secondary" role="button" aria-disabled="true">
+                            Second Ochre item
+                        </a>
 
-
-            <p id="paragraph">Below is a pie chart example.</p>
-            <table role = "presentation">
-                <tbody>
-                    <tr>
-                        <td style="text-align: center; border:none; padding:0;">
-                            <iframe src="../w6/w6pieChart.html" width="600" height="600" 
-                            style="max-width: 100%; max-height: 90vh; box-sizing: border-box;">
-                            </iframe>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-    
+                    </div>
+                </div>  
+            </div>  
 
 
 
         </footer>
+       
+       
         <!-- Bootstrap JavaScript Libraries -->
         <script
             src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -155,8 +162,14 @@
             integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
             crossorigin="anonymous"
         ></script>
-
+       
+       
         <script src="../js/nav.js"></script>
+
+        <script src="../js/w7ochre.js"></script>
+
+        
+
 
     </body>
 </html>
