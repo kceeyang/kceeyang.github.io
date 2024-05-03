@@ -28,5 +28,12 @@ a#not-nav:visited{color:green}
 a#not-nav:hover{color: darkblue}
 
 
+nav {
+    background-color: #800000;
+}
+.navbar-brand{
+    text-indent: 1em; 
+}
+
 
 .ul1:link{text-decoration: none;}
