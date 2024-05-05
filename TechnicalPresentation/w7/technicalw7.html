@@ -21,7 +21,7 @@
         />
 
         <!--Your custom css file -->
-        <link rel="stylesheet" href="../css/w7style.css">
+        <link rel="stylesheet" href="../css/w7ochrapi.css">
 
     </head>
 
@@ -29,9 +29,8 @@
         <!--Nav is loaded here via jQuery-->
         <div id="nav-placeholder"></div>
 
-        <h1>Week 7 Technical Presentation</h1>
+        <h1>Week 7 Technical Presentation (Part 1)</h1>
 
-        
         
 
         <header>
@@ -40,26 +39,25 @@
         <main></main>
 
         <footer>
-            <!-- place footer here -->
             
-           <!--   <h3 id="title"></h3>
-            <div id="ochreContainer" data-uuid='6f18e3a7-a396-46d9-85cb-92674c24cfc0'>
-                <div>
-                    <table class="'table table-striped table-bordered">
-                        <tbody id="ochreTableBody"></tbody>
-                    </table>
-                </div>
-            </div>
--->
-            <h2>OCHRE API</h2>
 
+            <!-- use with fetch() -->
+
+           <!--  <div class="container mt-3" id="ochreContainer" data-uuid = '6f18e3a7-a396-46d9-85cb-92674c24cfc0'>
+                <h3 id="title">Title: </h1>
+                <div id="ochreTableBody"></div>      
+            </div> -->
+
+
+
+            <!-- use with xhr -->
             <div class="container mt-3" id="ochreContainer" data-uuid = '6f18e3a7-a396-46d9-85cb-92674c24cfc0'>
-                <h3 id="title"></h1>
+                <h3 id="title">Title: </h1>
                 <table class="table table-striped order-table" id="ochreTable">
                     <thead class="thread-dark" id="ochreTableColumns">
                         <tr>
-                            <th style="text-align: left; width: 30%;">Property</th>
-                            <th style="text-align: left; width: 30%;">Value</th>                
+                            <th style="text-align: center; width: 30%;">Properties</th>
+                            <th style="text-align: center; width: 30%;">Values</th>                
                         </tr>
                     </thead>
                     <tbody id="ochreTableBody">
@@ -67,21 +65,24 @@
                 </table>
             </div>
 
-                
-            
 
 
             <div class="container mt-4 mb-4">
                 <div class = "row">
                     <div class = "col text-center">
                         <a href="../w7/w7xml2.html" class="btn btn-secondary" role="button" aria-disabled="true">
-                            Second Ochre item
+                            Go to the 2nd Ochre item page
                         </a>
-
                     </div>
                 </div>  
             </div>  
 
+
+
+            <h2 style="color: black;"> <br> View the Second Ochre Page</h2>
+            <iframe src="../w7/w7xml2.html" width="600" height="400" 
+                        style="max-width: 100%; max-height: 90vh; box-sizing: border-box; border:2px solid red;">
+            </iframe>
 
 
         </footer>

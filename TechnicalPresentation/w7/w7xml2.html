@@ -16,41 +16,57 @@
             integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
             crossorigin="anonymous"
         />
+
+        <!--jQuery CDN Link-->
+        <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+        <!--Your custom css file -->
+        <link rel="stylesheet" href="../css/w7ochrapi.css">
     </head>
 
     <body>
 
+        <!--Nav is loaded here via jQuery
+        <div id="nav-placeholder"></div>-->
+        
 
-        <h1>Technical</h1>
-        <h3 id="title"></h3>
-        <div class="container mt-3" id="ochreContainer" data-uuid='50f7b9a5-329a-49ab-85e2-f8fb4ee6e867'>
-            <div>
-                <div class="image" id="preview"></div>
-            </div> 
-        </div>
-
-
-        <div class="container mt-4 mb-4">
-            <div class = "row">
-                <div class = "col text-center">
-                    <a href="../w7/technicalw7.html" class="btn btn-secondary" role="button" aria-disabled="true">
-                        First Ochre item
-                    </a>
-
-                </div>
-            </div>  
-        </div>  
-
-    
-
+        <h1>Week 7 Technical Presentation (Part 2)</h1>
 
         <header>
             <!-- place navbar here -->
         </header>
         <main></main>
+       
+       
         <footer>
-            <!-- place footer here -->
+           
+            <h3 id="title" style="color: black;">Title: </h3>
+            <div class="container mt-3" id="ochreContainer" data-uuid='50f7b9a5-329a-49ab-85e2-f8fb4ee6e867'>
+                <div>
+                    <div class="image" id="preview">Preview Image: <br></div>
+                </div> 
+            </div>
+
+
+              
+            <div class="container mt-4 mb-4">
+                <div class = "row">
+                    <div class = "col text-center">
+                        <a href="../w7/technicalw7.html" class="btn btn-secondary" role="button" aria-disabled="true">
+                            Go to the 1st Ochre item page
+                        </a>
+
+                    </div>
+                </div>  
+            </div>  
+            
+            
+            <!-- -->
+
         </footer>
+       
+       
+       
         <!-- Bootstrap JavaScript Libraries -->
         <script
             src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -66,6 +82,7 @@
 
         <script src="../js/w7ochre.js"></script>
 
+        <script src="../js/nav.js"></script>
         
     </body>
 </html>
