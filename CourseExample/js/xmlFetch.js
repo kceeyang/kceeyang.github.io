@@ -1,6 +1,6 @@
 function loadXMLDoc() {
 
-  const xmlFilePath = 'media/rsti.xml';
+  const xmlFilePath = 'xml/w6rsti.xml';
 
 
   fetch(xmlFilePath)
