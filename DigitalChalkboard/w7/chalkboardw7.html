@@ -87,58 +87,60 @@
         
         <h1>Week 7 Digital Chalkboard</h1>
         
-        <p id="paragraph">Below is a standard map example.</p>
-        <table role = "presentation">
-            <tbody>
-                <tr>
-                    <td style="text-align: center; border:none; padding:0;">
-                        <iframe src="../w7/w7map.html" width="600" height="400" 
-                        style="max-width: 100%; max-height: 90vh; box-sizing: border-box;">
-                        </iframe>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="container-fluid container-content">
+
+            <p id="paragraph">Below is a standard map example.</p>
+            <table role = "presentation">
+                <tbody>
+                    <tr>
+                        <td style="text-align: center; border:none; padding:0;">
+                            <iframe src="../w7/w7map.html" width="600" height="400" 
+                            style="max-width: 100%; max-height: 90vh; box-sizing: border-box;">
+                            </iframe>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+
+
+            <p id="paragraph">Example: a map with Color-markers plugin & Layer Groups and Layers Control.</p>
+            <table role = "presentation">
+                <tbody>
+                    <tr>
+                        <td style="text-align: center; border:none; padding:0;">
+                            <iframe src="../w7/w7layerMap.html" width="600" height="400" 
+                            style="max-width: 100%; max-height: 90vh; box-sizing: border-box;">
+                            </iframe>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+
+            <p id="paragraph">Example: a map with Pin Search plugin.</p>
+            <table role = "presentation">
+                <tbody>
+                    <tr>
+                        <td style="text-align: center; border:none; padding:0;">
+                            <iframe src="../w7/w7searchMap.html" width="600" height="400" 
+                            style="max-width: 100%; max-height: 90vh; box-sizing: border-box;">
+                            </iframe>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+
         
+            <p id="paragraph">Example: a map with Full-screen plugin.
+            <!--  <a href="../w7/w7zoomMap.html" id="not-nav">Full-screen Map</a> -->
+            </p> 
 
+            <div id="map"></div>
 
-        <p id="paragraph">Example: a map with Color-markers plugin & Layer Groups and Layers Control.</p>
-        <table role = "presentation">
-            <tbody>
-                <tr>
-                    <td style="text-align: center; border:none; padding:0;">
-                        <iframe src="../w7/w7layerMap.html" width="600" height="400" 
-                        style="max-width: 100%; max-height: 90vh; box-sizing: border-box;">
-                        </iframe>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-
-
-
-        <p id="paragraph">Example: a map with Pin Search plugin.</p>
-        <table role = "presentation">
-            <tbody>
-                <tr>
-                    <td style="text-align: center; border:none; padding:0;">
-                        <iframe src="../w7/w7searchMap.html" width="600" height="400" 
-                        style="max-width: 100%; max-height: 90vh; box-sizing: border-box;">
-                        </iframe>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-
-
-       
-        <p id="paragraph">Example: a map with Full-screen plugin.
-           <!--  <a href="../w7/w7zoomMap.html" id="not-nav">Full-screen Map</a> -->
-       </p> 
-
-       <div id="map"></div>
-
-
+        </div>
 
         <!-- 
        <p id="paragraph">Below is a map example with full-screen.</p>
@@ -159,9 +161,10 @@
             <!-- place navbar here -->
         </header>
         <main></main>
-        <footer>
-            <!-- place footer here -->
-        </footer>
+        
+        <!--Footer-->
+        <div id="footer-placeholder"></div>
+
         
         
         
@@ -221,6 +224,7 @@
         </script>
 
         <script src="../js/nav.js"></script>
+        <script src="../js/footer.js"></script>
 
     </body>
 </html>
