@@ -16,3 +16,37 @@ h1 {
 footer{
     padding: 20px;
 }
+
+
+
+
+
+/* .footer {
+  position:absolute;
+  width:100%;
+  height:60px;   
+  background:#767676;
+  text-align: center;
+  margin: 2px auto 0 auto;
+}
+
+h2 {
+  font-size: medium;
+}
+
+.icon-button {
+  background-color: #800000;
+  color: white;
+  font-size: 7px;
+  
+}
+
+.icon-button:hover {
+  box-shadow: 0 0 10px 0 #800000 inset, 0 0 30px 5px #800000;
+  color: white;
+} 
+
+.container-content{
+  min-height: calc(100vh - 200px);
+  padding: 20px;
+} */
