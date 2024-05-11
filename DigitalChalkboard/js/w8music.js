@@ -1,100 +1,22 @@
-// function searchArtist() {
-//     const searchTerm = document.getElementById('searchInput').value.trim();
-//     if (searchTerm === '') {
-//       alert('Please enter an artist or band name.');
-//       return;
-//     }
-  
-//     fetch(`https://musicbrainz.org/ws/2/artist/?query=${encodeURIComponent(searchTerm)}&fmt=json`)
-//       .then(response => {
-//         if (!response.ok) {
-//           throw new Error('Network response was not ok');
-//         }
-//         return response.json();
-//       })
-//       .then(data => {
-//         displayArtists(data.artists);
-//       })
-//       .catch(error => {
-//         console.error('Error fetching data:', error);
-//         alert('An error occurred while fetching data. Please try again later.');
-//       });
-//   }
-  
-//   function displayArtists(artists) {
-//     const artistResults = document.getElementById('artistResults');
-//     artistResults.innerHTML = '';
-  
-//     if (artists.length === 0) {
-//       artistResults.textContent = 'No artists found.';
-//       return;
-//     }
-  
-//     const ul = document.createElement('ul');
-//     artists.forEach(artist => {
-//       const li = document.createElement('li');
-//       li.textContent = artist.name;
-//       li.addEventListener('click', () => {
-//         fetchAlbums(artist.id);
-//       });
-//       ul.appendChild(li);
-//     });
-//     artistResults.appendChild(ul);
-//   }
-  
-//   function fetchAlbums(artistId) {
-//     fetch(`https://musicbrainz.org/ws/2/release/?artist=${artistId}&fmt=json`)
-//       .then(response => {
-//         if (!response.ok) {
-//           throw new Error('Network response was not ok');
-//         }
-//         return response.json();
-//       })
-//       .then(data => {
-//         displayAlbums(data.releases);
-//       })
-//       .catch(error => {
-//         console.error('Error fetching data:', error);
-//         alert('An error occurred while fetching data. Please try again later.');
-//       });
-//   }
-  
-//   function displayAlbums(albums) {
-//     const albumTable = document.getElementById('albumTable');
-//     const albumList = document.getElementById('albumList');
-//     albumList.innerHTML = '';
-  
-//     if (albums.length === 0) {
-//       alert('No albums found for this artist.');
-//       return;
-//     }
-  
-//     albums.forEach(album => {
-//       const releaseDate = album['date'] ? album['date'] : 'Unknown';
-//       const albumName = album['title'] ? album['title'] : 'Unknown';
-//       const additionalFeature = album['status'] ? album['status'] : 'Unknown';
-  
-//       const tr = document.createElement('tr');
-//       tr.innerHTML = `
-//         <td>${releaseDate}</td>
-//         <td>${albumName}</td>
-//         <td>${additionalFeature}</td>
-//       `;
-//       albumList.appendChild(tr);
-//     });
-  
-//     albumTable.style.display = 'table';
-//   }
-
-
 
 
   ///////////////////////////////////  ///////////////////////////////////
 
 
+
+// function myFunction(){
+//     searchArtist();
+//     clearcontent('albumTable');
+// };
+
+
   function searchArtist() 
   {
     const searchInput = document.getElementById('searchInput').value;
+
+
+
+
     const baseUrl = 'https://musicbrainz.org/ws/2/artist/?query=';
     const format = '&fmt=json';
 
@@ -103,19 +25,28 @@
         .then(data => {
             displayResults(data);
         })
-        .catch(error => console.log('Error fetching artist data:', error));
+        .catch(error => console.log('fetching error - artist:', error));
 }
+
+
+
+
 
 function displayResults(data) 
 {
+    // const albumtabletest = document.getElementById('table');
+    // clearcontent(albumtabletest);
+
+
     const artistResults = document.getElementById('artistResults');
+
     artistResults.innerHTML = '';
 
-    if (data.artists && data.artists.length > 0) {
+    if (data.artists && data.artists.length > 0) 
+    {
         const artists = data.artists;
         const resultList = document.createElement('ul');
-
-
+        
         //add artist name as hyperlink
         artists.forEach(artist => {
             const listItem = document.createElement('li');
@@ -131,9 +62,12 @@ function displayResults(data)
 
         artistResults.appendChild(resultList);
     } else {
-        artistResults.textContent = 'No artists found.';
+        artistResults.textContent = 'Could not find this artist.';
     }
 }
+
+
+
 
 function fetchAlbums(artistId) 
 {
@@ -145,13 +79,19 @@ function fetchAlbums(artistId)
         .then(data => {
             displayAlbums(data.releases);
         })
-        .catch(error => console.log('Error fetching album data:', error));
+        .catch(error => console.log('fetching error - album:', error));
 }
+
+
+
+
 
 function displayAlbums(albums) 
 {
     const albumTable = document.getElementById('albumTable');
+
     const albumList = document.getElementById('albumList');
+
     albumList.innerHTML = '';
 
     if (albums && albums.length > 0) 
@@ -193,13 +133,35 @@ function fetchAlbumInfo(albumId)
         .then(data => {
             displayAlbumInfo(data);
         })
-        .catch(error => console.log('Error fetching album info:', error));
+        .catch(error => console.log('fetching error - album detail:', error));
 }
+
+
+function clearcontent(elementID) 
+{ 
+    document.getElementById(elementID).innerHTML = ""; 
+} 
+
+
+function removeResults(parentDiv){
+    while (parentDiv.firstChild) {
+      parentDiv.removeChild(parentDiv.firstChild);
+    }
+  }
+
+
 
 function displayAlbumInfo(album) 
 {
+    
+    // const albumlisttest = document.getElementById('albumList');
+    // clearcontent(albumlisttest);
+
     const albumInfoTable = document.createElement('table');
-    albumInfoTable.classList.add('table', 'table-bordered', 'table-striped', 'mt-3');
+
+    //albumInfoTable.classList.add('table', 'table-bordered', 'table-striped', 'mt-3');
+    albumInfoTable.classList.add('table');
+
     albumInfoTable.innerHTML = `
         <thead>
             <tr>
@@ -222,4 +184,5 @@ function displayAlbumInfo(album)
     const albumTableContainer = document.getElementById('albumTable');
     albumTableContainer.innerHTML = '';
     albumTableContainer.appendChild(albumInfoTable);
+
 }

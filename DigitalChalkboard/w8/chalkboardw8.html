@@ -33,19 +33,27 @@
         
         <div class="container-fluid container-content">
             
-            <h3>Music Search</h3>
-            <input type="text" id="searchInput" placeholder="Enter artist or band name">
-            <button onclick="searchArtist()">Search</button>
+            <h3>Music API Search Example</h3>
+            <div class="row">
+                <div class="col">
+                    <input type="text" id="searchInput" placeholder="Artist name">
+                </div>
+            </div>
+            <button class="btn btn-primary my-3" onclick="searchArtist()">Search</button>
+            <!-- <button class="btn btn-primary my-3" onclick='myFunction()'>Search</button> -->
             <div id="artistResults"></div>
-            <table id="albumTable" style="display: none;">
+            <table class="table table-striped" id="albumTable" style="display: none;">
                 <thead>
                 <tr>
-                    <th>Release Date</th>
-                    <th>Album Name</th>
+                    <th style="text-align: left; width: 30%;">Release Date</th>
+                    <th style="text-align: left; width: 30%;">Album Name</th>
                 </tr>
                 </thead>
                 <tbody id="albumList"></tbody>
             </table>
+
+            <!-- <button class="btn btn-primary my-3" onclick="clearcontent('albumTable')">Clear</button> -->
+            
 
         </div>
 
