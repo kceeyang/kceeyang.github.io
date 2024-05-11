@@ -8,16 +8,11 @@
         <ul class="navbar-nav mr-auto">
             
             
-            <a class="navbar-brand" href="/index.html">Home</a>
+            <a class="navbar-brand" href="/index.html"><u>Home</u></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
             
-            <!-- 
-            <li class="nav-item">
-                <a class="nav-link" homeid="a1" href="index.html">Home</a>
-            </li>
-            -->
 
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdown_01" role="button" data-bs-toggle="dropdown"
@@ -73,9 +68,20 @@
     </div>
     
     <script>
+        //var pathname = window.location.pathname;
+        //var cleanPath = pathname.substring(pathname.lastIndexOf('/') + 1);
+       // $('[href*="' + cleanPath + '"]').addClass('active');
+
+
         var pathname = window.location.pathname;
         var cleanPath = pathname.substring(pathname.lastIndexOf('/') + 1);
         $('[href*="' + cleanPath + '"]').addClass('active');
+        $('[href*="' + cleanPath + '"]').parent('div').siblings('a').addClass('active');
+       
+       
+
+
+
     </script>
 
 

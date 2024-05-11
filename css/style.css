@@ -22,10 +22,11 @@ nav {
 }
 
 .active{
-    color:white;
+    /* color:#06dd63; */
     font-weight: bold;
+    font-style: oblique;
+    text-decoration: underline;
 }
-
 
 
 
