@@ -46,6 +46,10 @@ p {
   background-color: #800000;
 }
 
+.navbar-brand{
+  text-indent: 1em; 
+}
+
 .text {
   flex-direction: column;
   display: flex;
@@ -56,7 +60,7 @@ p {
   margin: 0;
 }
 
-footer p.maroon {
+/* footer p.maroon {
   display: flex;
   align-items: center;
   padding: 1.2rem;
@@ -85,4 +89,70 @@ footer p.lightGray {
   padding: 0;
   background-color: #D6D6CE;
   color: #000000;
+}# sourceMappingURL=w2colorpalette.css.map */
+
+
+
+
+.container-content p.maroon {
+  display: flex;
+  align-items: center;
+  padding: 1.2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #800000;
+  color: #D6D6CE;
+}
+.container-content p.darkGray {
+  display: flex;
+  align-items: center;
+  padding: 1.2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #767676;
+  color: #FFFFFF;
+}
+.container-content p.lightGray {
+  display: flex;
+  align-items: center;
+  padding: 1.2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #D6D6CE;
+  color: #000000;
 }/*# sourceMappingURL=w2colorpalette.css.map */
+
+
+
+.footer {
+  position:absolute;
+  width:100%;
+  height:60px;   
+  background:#767676;
+  text-align: center;
+  margin: 2px auto 0 auto;
+}
+
+h2 {
+  font-size: medium;
+}
+
+.icon-button {
+  background-color: #800000;
+  color: white;
+  font-size: 7px;
+  
+}
+
+.icon-button:hover {
+  box-shadow: 0 0 10px 0 #800000 inset, 0 0 30px 5px #800000;
+  color: white;
+} 
+
+.container-content{
+  min-height: calc(100vh - 100px);
+  /* padding: 20px; */
+}
