@@ -51,10 +51,10 @@ h2 {
     
 }
   
-.icon-button:hover {
+/* .icon-button:hover {
     box-shadow: 0 0 10px 0 #800000 inset, 0 0 30px 5px #800000;
     color: white;
-} 
+}  */
 
 .container-content{
     min-height: calc(100vh - 225px);
